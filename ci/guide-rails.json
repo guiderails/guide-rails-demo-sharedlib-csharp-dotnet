@@ -76,10 +76,7 @@
 								"message": "Test message"
 							}
 						],
-						"code_analysis": {
-							"publish": false,
-							"properties": null
-						}
+						"code_analysis": null
 					},
 					"on_failure": {
 						"notifications": [
@@ -90,10 +87,7 @@
 								"message": "Segment Failure"
 							}
 						],
-						"code_analysis": {
-							"publish": false,
-							"properties": null
-						}
+						"code_analysis": null
 					},
 					"on_abort": {
 						"notifications": [
@@ -104,10 +98,7 @@
 								"message": "Segment Aborted"
 							}
 						],
-						"code_analysis": {
-							"publish": false,
-							"properties": null
-						}
+						"code_analysis": null
 					}
 				},
 				"deployment_strategy": {
@@ -217,31 +208,14 @@
 			}
 		},
 		"default_properties": null,
-		"deployment_files": [
-			{
-				"source_path": "ci/config/application.config",
-				"target_path": "config/application.config"
-			},
-			{
-				"source_path": "ci/config/service-registry.erb",
-				"target_path": "config/service-registry.json"
-			},
-			{
-				"source_path": "ci/bin/start-service.sh",
-				"target_path": "bin/start-service.sh"
-			},
-			{
-				"source_path": "ci/bin/execute-tests.sh",
-				"target_path": "bin/execute-tests.sh"
-			}
-		],
+		"deployment_files": [],
 		"application_init": {
 			"command": "",
 			"arguments": null
 		},
 		"process": {
 			"init": {
-				"command": "bin/start-service.sh"
+				"command": ""
 			}
 		},
 		"releases": []
