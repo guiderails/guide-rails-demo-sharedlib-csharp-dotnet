@@ -46,6 +46,12 @@
 						"definition": "Unit test and coverage",
 						"command": ".\\test.ps1",
 						"properties": null
+					},
+					{
+						"name": "NuGet Publish",
+						"definition": "Publish NuGet Package",
+						"command": "cd SharedLib\n.\\package.ps1",
+						"properties": null
 					}
 				],
 				"exit_actions": {
