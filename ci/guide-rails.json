@@ -207,7 +207,13 @@
 				}
 			}
 		},
-		"default_properties": null,
+		"default_properties": [
+			{
+				"name": "consul.tag",
+				"value": "((application.shortsha))",
+				"type": "string"
+			}
+		],
 		"deployment_files": [],
 		"application_init": {
 			"command": "",
