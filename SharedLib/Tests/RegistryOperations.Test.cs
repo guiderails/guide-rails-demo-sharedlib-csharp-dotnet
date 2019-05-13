@@ -5,7 +5,7 @@ namespace SharedLib.Tests {
 
 	public class RegistryOperationsTests {
 
-		readonly string origmessage;
+		string origmessage; // add code standard violation
 
 		public RegistryOperationsTests() {
 			RegistryOperations ro = new RegistryOperations();
