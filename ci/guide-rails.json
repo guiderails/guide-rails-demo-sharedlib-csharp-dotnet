@@ -212,6 +212,11 @@
 				"name": "consul.tag",
 				"value": "((application.shortsha))",
 				"type": "string"
+			},
+			{
+				"name": "consul.servicename",
+				"value": "((application.name))",
+				"type": "string"
 			}
 		],
 		"deployment_files": [],
