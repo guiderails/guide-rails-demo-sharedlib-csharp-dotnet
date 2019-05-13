@@ -44,7 +44,7 @@
 					{
 						"name": "Unit test and Coverage",
 						"definition": "Unit test and coverage",
-						"command": "Write-Host \"Add this step\"",
+						"command": ".\\test.ps1",
 						"properties": null
 					}
 				],
