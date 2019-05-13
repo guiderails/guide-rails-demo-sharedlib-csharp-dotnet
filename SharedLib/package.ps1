@@ -1,5 +1,5 @@
 ﻿$ver = "1.0.4"
-if (null -ne $env:VERSION_FOR_NUGET) {
+if ($null -ne $env:VERSION_FOR_NUGET) {
 	$ver = $env:VERSION_FOR_NUGET
 }
 
