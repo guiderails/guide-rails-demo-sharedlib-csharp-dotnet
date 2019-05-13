@@ -217,6 +217,21 @@
 				"name": "consul.servicename",
 				"value": "((application.name))",
 				"type": "string"
+			},
+			{
+				"name": "consul.datacenter",
+				"value": "((customer.name))",
+				"type": "string"
+			},
+			{
+				"name": "consul.environment",
+				"value": "DEV",
+				"type": "string"
+			},
+			{
+				"name": "consul.prod.domain",
+				"value": "consul",
+				"type": "string"
 			}
 		],
 		"deployment_files": [],
