@@ -48,9 +48,15 @@
 						"properties": null
 					},
 					{
+						"name": "Make Cobertura Report",
+						"definition": "convert report to cobertura format",
+						"command": ".\\makereport.ps1",
+						"properties": null
+					},
+					{
 						"name": "NuGet Publish",
 						"definition": "Publish NuGet Package",
-						"command": "Write-Host \"cd SharedLib.\\package.ps1\"",
+						"command": "cd SharedLib.\\package.ps1",
 						"properties": null
 					}
 				],
