@@ -86,7 +86,6 @@
   <ItemGroup>
     <None Include="package.ps1" />
     <None Include="packages.config" />
-    <None Include="README.md" />
     <None Include="SharedLib.nuspec" />
   </ItemGroup>
   <ItemGroup>
