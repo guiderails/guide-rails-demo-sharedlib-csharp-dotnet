@@ -50,7 +50,7 @@
 					{
 						"name": "NuGet Publish",
 						"definition": "Publish NuGet Package",
-						"command": "cd SharedLib\n.\\package.ps1",
+						"command": "Write-Host \"cd SharedLib.\\package.ps1\"",
 						"properties": null
 					}
 				],
