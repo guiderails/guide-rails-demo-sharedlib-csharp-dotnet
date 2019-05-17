@@ -10,7 +10,7 @@ namespace SharedLib {
 
 		private const string messageLocation = @"Software\Calculi";
 		private const string messageKey = "message";
-		public readonly string HelloMessageDefault = "Hello message not set";
+		public readonly string HelloMessageDefault = "Hello from the server.s";
 
 		public string GetMessage() {
 			string message = HelloMessageDefault;
