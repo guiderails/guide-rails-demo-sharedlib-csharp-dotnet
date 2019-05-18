@@ -3,3 +3,5 @@ bin
 obj
 .vs
 *.nupkg
+TestResults
+coverage.xml

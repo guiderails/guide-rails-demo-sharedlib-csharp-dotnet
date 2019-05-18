@@ -32,7 +32,7 @@
 					{
 						"name": "Restore",
 						"definition": "Restore with nuget",
-						"command": "msbuild /restore",
+						"command": "nuget restore",
 						"properties": null
 					},
 					{
@@ -44,7 +44,19 @@
 					{
 						"name": "Unit test and Coverage",
 						"definition": "Unit test and coverage",
-						"command": "Write-Host \"Add this step\"",
+						"command": ".\\test.ps1",
+						"properties": null
+					},
+					{
+						"name": "Make Cobertura Report",
+						"definition": "convert report to cobertura format",
+						"command": ".\\makereport.ps1",
+						"properties": null
+					},
+					{
+						"name": "NuGet Publish",
+						"definition": "Publish NuGet Package",
+						"command": "cd SharedLib\n.\\package.ps1",
 						"properties": null
 					}
 				],
@@ -76,10 +88,7 @@
 								"message": "Test message"
 							}
 						],
-						"code_analysis": {
-							"publish": false,
-							"properties": null
-						}
+						"code_analysis": null
 					},
 					"on_failure": {
 						"notifications": [
@@ -90,10 +99,7 @@
 								"message": "Segment Failure"
 							}
 						],
-						"code_analysis": {
-							"publish": false,
-							"properties": null
-						}
+						"code_analysis": null
 					},
 					"on_abort": {
 						"notifications": [
@@ -104,10 +110,7 @@
 								"message": "Segment Aborted"
 							}
 						],
-						"code_analysis": {
-							"publish": false,
-							"properties": null
-						}
+						"code_analysis": null
 					}
 				},
 				"deployment_strategy": {
@@ -216,32 +219,36 @@
 				}
 			}
 		},
-		"default_properties": null,
-		"deployment_files": [
+		"default_properties": [
 			{
-				"source_path": "ci/config/application.config",
-				"target_path": "config/application.config"
+				"name": "consul.tag",
+				"value": "((application.shortsha))",
+				"type": "string"
 			},
 			{
-				"source_path": "ci/config/service-registry.erb",
-				"target_path": "config/service-registry.json"
+				"name": "consul.servicename",
+				"value": "((application.name))",
+				"type": "string"
 			},
 			{
-				"source_path": "ci/bin/start-service.sh",
-				"target_path": "bin/start-service.sh"
+				"name": "additional_properties_file",
+				"value": "local-sonar-project.properties",
+				"type": "string"
 			},
 			{
-				"source_path": "ci/bin/execute-tests.sh",
-				"target_path": "bin/execute-tests.sh"
+				"name": "source_dirs",
+				"value": "local-sonar-project.properties",
+				"type": "string"
 			}
 		],
+		"deployment_files": [],
 		"application_init": {
 			"command": "",
 			"arguments": null
 		},
 		"process": {
 			"init": {
-				"command": "bin/start-service.sh"
+				"command": ""
 			}
 		},
 		"releases": []
