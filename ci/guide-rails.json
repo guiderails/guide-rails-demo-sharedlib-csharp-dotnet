@@ -38,7 +38,7 @@
 					{
 						"name": "Build",
 						"definition": "Build debug files",
-						"command": "msbuild /t:Rebuild /p:Configuration=Debug",
+						"command": "# msbuild /t:Rebuild /p:Configuration=Debug",
 						"properties": null
 					},
 					{
