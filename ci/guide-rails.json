@@ -32,7 +32,7 @@
 					{
 						"name": "Restore",
 						"definition": "Restore with nuget",
-						"command": "nuget restore\ndir",
+						"command": "nuget restore",
 						"properties": null
 					},
 					{
