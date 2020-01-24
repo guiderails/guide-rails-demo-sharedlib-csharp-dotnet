@@ -32,7 +32,7 @@
 					{
 						"name": "Restore",
 						"definition": "Restore with nuget",
-						"command": "nuget restore",
+						"command": "# nuget restore",
 						"properties": null
 					},
 					{
@@ -44,19 +44,19 @@
 					{
 						"name": "Unit test and Coverage",
 						"definition": "Unit test and coverage",
-						"command": ".\\test.ps1",
+						"command": "# .\\test.ps1",
 						"properties": null
 					},
 					{
 						"name": "Make Cobertura Report",
 						"definition": "convert report to cobertura format",
-						"command": ".\\makereport.ps1",
+						"command": "# .\\makereport.ps1",
 						"properties": null
 					},
 					{
 						"name": "NuGet Publish",
 						"definition": "Publish NuGet Package",
-						"command": "cd SharedLib\n.\\package.ps1",
+						"command": "# cd SharedLib\n# .\\package.ps1",
 						"properties": null
 					}
 				],
