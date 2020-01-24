@@ -28,38 +28,6 @@
 			{
 				"name": "Build",
 				"segment_type": "build",
-				"job_steps": [
-					{
-						"name": "Restore",
-						"definition": "Restore with nuget",
-						"command": "# nuget restore",
-						"properties": null
-					},
-					{
-						"name": "Build",
-						"definition": "Build debug files",
-						"command": "# msbuild /t:Rebuild /p:Configuration=Debug",
-						"properties": null
-					},
-					{
-						"name": "Unit test and Coverage",
-						"definition": "Unit test and coverage",
-						"command": "# .\\test.ps1",
-						"properties": null
-					},
-					{
-						"name": "Make Cobertura Report",
-						"definition": "convert report to cobertura format",
-						"command": "# .\\makereport.ps1",
-						"properties": null
-					},
-					{
-						"name": "NuGet Publish",
-						"definition": "Publish NuGet Package",
-						"command": "# cd SharedLib\n# .\\package.ps1",
-						"properties": null
-					}
-				],
 				"exit_actions": {
 					"default": {
 						"fetch_logs": true,
