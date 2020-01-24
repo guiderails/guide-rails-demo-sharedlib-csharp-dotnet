@@ -50,13 +50,13 @@
 					{
 						"name": "Make Cobertura Report",
 						"definition": "Make Cobertura Report",
-						"command": "# .\\makereport.ps1",
+						"command": ".\\makereport.ps1",
 						"properties": null
 					},
 					{
 						"name": "NuGet Publish",
 						"definition": "NuGet Publish",
-						"command": "# cd SharedLib\n# .\\package.ps1",
+						"command": "cd SharedLib\n.\\package.ps1",
 						"properties": null
 					}
 				],
