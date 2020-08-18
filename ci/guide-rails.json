@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"version": 1
+		"version": 2
 	},
 	"application": {
 		"name": "netdemo-sharedlib",
@@ -28,38 +28,6 @@
 			{
 				"name": "Build",
 				"segment_type": "build",
-				"job_steps": [
-					{
-						"name": "Restore",
-						"definition": "Restore",
-						"command": "nuget restore",
-						"properties": null
-					},
-					{
-						"name": "Build",
-						"definition": "Build",
-						"command": "# msbuild /t:Rebuild /p:Configuration=Debug",
-						"properties": null
-					},
-					{
-						"name": "Unit test and Coverage",
-						"definition": "Unit test and Coverage",
-						"command": "# .\\test.ps1",
-						"properties": null
-					},
-					{
-						"name": "Make Cobertura Report",
-						"definition": "Make Cobertura Report",
-						"command": ".\\makereport.ps1",
-						"properties": null
-					},
-					{
-						"name": "NuGet Publish",
-						"definition": "NuGet Publish",
-						"command": "cd SharedLib\n# .\\package.ps1",
-						"properties": null
-					}
-				],
 				"exit_actions": {
 					"default": {
 						"fetch_logs": true,
@@ -84,7 +52,6 @@
 							{
 								"type": "slack",
 								"send_notification": true,
-								"to": null,
 								"message": "Test message"
 							}
 						],
@@ -95,7 +62,6 @@
 							{
 								"type": "slack",
 								"send_notification": true,
-								"to": null,
 								"message": "Segment Failure"
 							}
 						],
@@ -106,7 +72,6 @@
 							{
 								"type": "slack",
 								"send_notification": true,
-								"to": null,
 								"message": "Segment Aborted"
 							}
 						],
@@ -118,20 +83,14 @@
 					"update_watch_time": "",
 					"serial": false
 				},
-				"application_init": {
-					"command": "",
-					"arguments": null
-				},
+				"application_init": {},
 				"packages": [
 					{
 						"name": "((application.name))",
-						"dependencies": [],
 						"downloads": [],
 						"files": [
 							"((application.name))*"
-						],
-						"package_install_command": "",
-						"installed_path": ""
+						]
 					}
 				],
 				"instance_tags": [
@@ -154,7 +113,44 @@
 						"UnhealthyThresholdCount": 0
 					}
 				},
-				"cache_info": {}
+				"cache_info": {},
+				"tasks": [
+					{
+						"name": "netdemo-sharedlib",
+						"steps": [
+							{
+								"name": "Restore",
+								"definition": "Restore",
+								"command": "nuget restore",
+								"properties": null
+							},
+							{
+								"name": "Build",
+								"definition": "Build",
+								"command": "# msbuild /t:Rebuild /p:Configuration=Debug",
+								"properties": null
+							},
+							{
+								"name": "Unit test and Coverage",
+								"definition": "Unit test and Coverage",
+								"command": "# .\\test.ps1",
+								"properties": null
+							},
+							{
+								"name": "Make Cobertura Report",
+								"definition": "Make Cobertura Report",
+								"command": ".\\makereport.ps1",
+								"properties": null
+							},
+							{
+								"name": "NuGet Publish",
+								"definition": "NuGet Publish",
+								"command": "cd SharedLib\n# .\\package.ps1",
+								"properties": null
+							}
+						]
+					}
+				]
 			}
 		],
 		"exit_actions": {
@@ -181,12 +177,10 @@
 					{
 						"type": "slack",
 						"send_notification": true,
-						"to": null,
 						"message": "Test message"
 					}
 				],
 				"code_analysis": {
-					"publish": false,
 					"properties": null
 				}
 			},
@@ -195,12 +189,10 @@
 					{
 						"type": "slack",
 						"send_notification": true,
-						"to": null,
 						"message": "Segment Failure"
 					}
 				],
 				"code_analysis": {
-					"publish": false,
 					"properties": null
 				}
 			},
@@ -209,12 +201,10 @@
 					{
 						"type": "slack",
 						"send_notification": true,
-						"to": null,
 						"message": "Segment Aborted"
 					}
 				],
 				"code_analysis": {
-					"publish": false,
 					"properties": null
 				}
 			}
@@ -226,11 +216,6 @@
 				"type": "string"
 			},
 			{
-				"name": "consul.servicename",
-				"value": "((application.name))",
-				"type": "string"
-			},
-			{
 				"name": "additional_properties_file",
 				"value": "local-sonar-project.properties",
 				"type": "string"
@@ -239,17 +224,17 @@
 				"name": "source_dirs",
 				"value": "local-sonar-project.properties",
 				"type": "string"
+			},
+			{
+				"name": "gr.sonarscanner.type",
+				"value": "msbuild",
+				"type": "string"
 			}
 		],
 		"deployment_files": [],
-		"application_init": {
-			"command": "",
-			"arguments": null
-		},
+		"application_init": {},
 		"process": {
-			"init": {
-				"command": ""
-			}
+			"init": {}
 		},
 		"releases": []
 	},
