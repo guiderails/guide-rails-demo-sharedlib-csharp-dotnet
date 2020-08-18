@@ -89,7 +89,7 @@
 						"name": "((application.name))",
 						"downloads": [],
 						"files": [
-							"((application.name))*"
+							"SharedLib/*.nupkg"
 						]
 					}
 				],
