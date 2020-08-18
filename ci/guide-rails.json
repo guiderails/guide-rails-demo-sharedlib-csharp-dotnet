@@ -119,6 +119,12 @@
 						"name": "netdemo-sharedlib",
 						"steps": [
 							{
+								"name": "Env",
+								"definition": "Env",
+								"command": "Get-Item -Path Env:*",
+								"properties": null
+							},
+							{
 								"name": "Restore",
 								"definition": "Restore",
 								"command": "nuget restore",
@@ -127,13 +133,13 @@
 							{
 								"name": "Build",
 								"definition": "Build",
-								"command": "# msbuild /t:Rebuild /p:Configuration=Debug",
+								"command": "msbuild /t:Rebuild /p:Configuration=Debug",
 								"properties": null
 							},
 							{
 								"name": "Unit test and Coverage",
 								"definition": "Unit test and Coverage",
-								"command": "# .\\test.ps1",
+								"command": ".\\test.ps1",
 								"properties": null
 							},
 							{
@@ -145,7 +151,7 @@
 							{
 								"name": "NuGet Publish",
 								"definition": "NuGet Publish",
-								"command": "cd SharedLib\n# .\\package.ps1",
+								"command": "cd SharedLib\n.\\package.ps1",
 								"properties": null
 							}
 						]
