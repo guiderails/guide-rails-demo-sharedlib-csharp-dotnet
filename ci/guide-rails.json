@@ -217,23 +217,23 @@
 		},
 		"default_properties": [
 			{
-				"name": "consul.tag",
-				"value": "((application.shortsha))",
-				"type": "string"
-			},
-			{
 				"name": "additional_properties_file",
 				"value": "local-sonar-project.properties",
 				"type": "string"
 			},
 			{
-				"name": "source_dirs",
-				"value": "local-sonar-project.properties",
+				"name": "consul.tag",
+				"value": "((application.shortsha))",
 				"type": "string"
 			},
 			{
 				"name": "gr.sonarscanner.type",
 				"value": "msbuild",
+				"type": "string"
+			},
+			{
+				"name": "source_dirs",
+				"value": "local-sonar-project.properties",
 				"type": "string"
 			}
 		],
